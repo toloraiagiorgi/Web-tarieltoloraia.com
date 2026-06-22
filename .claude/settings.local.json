@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node serve.js 8080)",
+      "PowerShell(try { Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction Stop | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue; \"stopped PID $_\" } } catch { \"nothing listening on 8080\" })",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(node tools/gen-board.js)",
+      "Bash(node -e \"const d=require\\('./data/board.json'\\); console.log\\('origin:', JSON.stringify\\(d.board.origin\\), 'thickness:', d.board.thickness\\);\")",
+      "Bash(curl -fsSL \"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js\" -o vendor/GLTFLoader.js)",
+      "Bash(curl -fsSL \"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js\" -o vendor/BufferGeometryUtils.js)"
+    ]
+  }
+}
