@@ -18,8 +18,54 @@ if (hamburger && nav) {
   });
 }
 
+// ── Share button ─────────────────────────────────────────
+const shareBtn = document.querySelector('.share-btn');
+const shareDropdown = document.querySelector('.share-dropdown');
+
+if (shareBtn && shareDropdown) {
+  shareBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = shareDropdown.classList.toggle('open');
+    shareBtn.classList.toggle('open', isOpen);
+    shareBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', () => {
+    shareDropdown.classList.remove('open');
+    shareBtn.classList.remove('open');
+    shareBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  shareDropdown.addEventListener('click', e => e.stopPropagation());
+
+  shareDropdown.querySelectorAll('.share-option').forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.preventDefault();
+      const pageUrl = encodeURIComponent(window.location.href);
+      const platform = opt.dataset.platform;
+      let target = '';
+      if (platform === 'facebook') {
+        target = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+      } else if (platform === 'whatsapp') {
+        target = 'https://wa.me/?text=' + pageUrl;
+      } else if (platform === 'pinterest') {
+        target = 'https://pinterest.com/pin/create/button/?url=' + pageUrl;
+      } else if (platform === 'instagram') {
+        if (navigator.share) {
+          navigator.share({ url: window.location.href }).catch(() => {});
+        } else {
+          target = 'https://www.instagram.com/tarieltoloraia';
+        }
+      }
+      if (target) window.open(target, '_blank', 'noopener');
+      shareDropdown.classList.remove('open');
+      shareBtn.classList.remove('open');
+      shareBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 // ── Auto-span wide paintings ────────────────────────────
-// Any image significantly wider than tall gets 2 columns
 document.querySelectorAll('.gallery-item img').forEach(img => {
   function checkRatio() {
     if (!img.naturalWidth || !img.naturalHeight) return;
@@ -31,7 +77,7 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
   else img.addEventListener('load', checkRatio);
 });
 
-// ── Lightbox + Gallery navigation + Zoom ────────────────
+// ── Lightbox + Navigation + Zoom ────────────────────────
 const lightbox = document.getElementById('lightbox');
 
 if (lightbox) {
@@ -42,8 +88,8 @@ if (lightbox) {
   const btnPrev       = document.querySelector('.lightbox-prev');
   const btnNext       = document.querySelector('.lightbox-next');
 
-  const galleryItems  = Array.from(document.querySelectorAll('.gallery-item'));
-  let currentIndex    = 0;
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let currentIndex   = 0;
 
   // ── Zoom state ─────────────────────────────────────────
   let scale = 1, panX = 0, panY = 0;
@@ -66,7 +112,6 @@ if (lightbox) {
     lightboxImg.style.cursor     = 'zoom-in';
   }
 
-  // ── Show a specific item ────────────────────────────────
   function showItem(index) {
     currentIndex = (index + galleryItems.length) % galleryItems.length;
     const item = galleryItems[currentIndex];
@@ -79,7 +124,6 @@ if (lightbox) {
     resetZoom();
   }
 
-  // ── Open / close ────────────────────────────────────────
   function openLightbox(item) {
     showItem(galleryItems.indexOf(item));
     lightbox.classList.add('active');
@@ -94,15 +138,12 @@ if (lightbox) {
     document.body.style.overflow = '';
   }
 
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => openLightbox(item));
-  });
+  galleryItems.forEach(item => item.addEventListener('click', () => openLightbox(item)));
 
   document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   document.querySelector('.lightbox-inner').addEventListener('click', e => e.stopPropagation());
   lightbox.addEventListener('click', closeLightbox);
 
-  // ── Arrow navigation ────────────────────────────────────
   btnPrev.addEventListener('click', e => { e.stopPropagation(); showItem(currentIndex - 1); });
   btnNext.addEventListener('click', e => { e.stopPropagation(); showItem(currentIndex + 1); });
 
@@ -181,4 +222,3 @@ if (lightbox) {
 
   lightboxImg.addEventListener('touchend', () => { isDragging = false; initPinchDist = 0; });
 }
-

@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TARIEL TOLORAIA</title>
+  <title>Tariel Toloraia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="T.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,15 +21,21 @@
         <span></span>
       </button>
       <nav class="nav">
-        <a href="index.html" class="nav-link active">Portfolio</a>
+        <a href="index.html" class="nav-link active">Artwork</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="https://www.instagram.com/shmmolo/" target="_blank" rel="noopener" class="nav-link nav-instagram" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4.5"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
+        <div class="nav-share">
+          <button class="share-btn" aria-label="Share" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+          </button>
+          <div class="share-dropdown" role="menu">
+            <a href="#" class="share-option" data-platform="facebook" role="menuitem">Facebook</a>
+            <a href="#" class="share-option" data-platform="whatsapp" role="menuitem">WhatsApp</a>
+            <a href="#" class="share-option" data-platform="pinterest" role="menuitem">Pinterest</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -40,7 +47,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0437~2.JPG" alt="IMG_0437~2">
+          <img src="images/IMG_0437~2.webp" decoding="async" alt="IMG_0437~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -48,7 +55,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20210826_210234_228.jpg" alt="IMG_20210826_210234_228">
+          <img src="images/IMG_20210826_210234_228.webp" decoding="async" alt="IMG_20210826_210234_228">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -56,7 +63,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20211128_150903_185.jpg" alt="IMG_20211128_150903_185">
+          <img src="images/IMG_20211128_150903_185.webp" decoding="async" alt="IMG_20211128_150903_185">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -64,7 +71,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20211217_221624_511.jpg" alt="IMG_20211217_221624_511">
+          <img src="images/IMG_20211217_221624_511.webp" decoding="async" alt="IMG_20211217_221624_511">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -72,7 +79,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20220415_123617_840.jpg" alt="IMG_20220415_123617_840">
+          <img src="images/IMG_20220415_123617_840.webp" decoding="async" alt="IMG_20220415_123617_840">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -80,7 +87,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20220703_184932_852.jpg" alt="IMG_20220703_184932_852">
+          <img src="images/IMG_20220703_184932_852.webp" decoding="async" alt="IMG_20220703_184932_852">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -88,7 +95,7 @@
 
       <div class="gallery-item" data-title="20 july" data-size="60x40" data-technique="Oil on Canvas">
         <div class="img-wrap">
-          <img src="images/1694282649989~2.JPG" alt="1694282649989~2">
+          <img src="images/1694282649989~2.webp" loading="lazy" decoding="async" alt="1694282649989~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -96,7 +103,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20220703_185130_821.jpg" alt="IMG_20220703_185130_821">
+          <img src="images/IMG_20220703_185130_821.webp" loading="lazy" decoding="async" alt="IMG_20220703_185130_821">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -104,7 +111,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20220703_185207_057~2.jpg" alt="IMG_20220703_185207_057~2">
+          <img src="images/IMG_20220703_185207_057~2.webp" loading="lazy" decoding="async" alt="IMG_20220703_185207_057~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -112,7 +119,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20220708_150610_703.jpg" alt="IMG_20220708_150610_703">
+          <img src="images/IMG_20220708_150610_703.webp" loading="lazy" decoding="async" alt="IMG_20220708_150610_703">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -120,7 +127,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20220826_174653_261.jpg" alt="IMG_20220826_174653_261">
+          <img src="images/IMG_20220826_174653_261.webp" loading="lazy" decoding="async" alt="IMG_20220826_174653_261">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -128,7 +135,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0003~2.JPG" alt="IMG_0003~2">
+          <img src="images/IMG_0003~2.webp" loading="lazy" decoding="async" alt="IMG_0003~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -136,7 +143,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20230113_191506_612.jpg" alt="IMG_20230113_191506_612">
+          <img src="images/IMG_20230113_191506_612.webp" loading="lazy" decoding="async" alt="IMG_20230113_191506_612">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -144,7 +151,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20230610_035309_497.jpg" alt="IMG_20230610_035309_497">
+          <img src="images/IMG_20230610_035309_497.webp" loading="lazy" decoding="async" alt="IMG_20230610_035309_497">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -152,7 +159,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20230803_123041_142.jpg" alt="IMG_20230803_123041_142">
+          <img src="images/IMG_20230803_123041_142.webp" loading="lazy" decoding="async" alt="IMG_20230803_123041_142">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -160,7 +167,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20231001_084324_580.jpg" alt="IMG_20231001_084324_580">
+          <img src="images/IMG_20231001_084324_580.webp" loading="lazy" decoding="async" alt="IMG_20231001_084324_580">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -168,7 +175,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_20231031_133810_090.jpg" alt="IMG_20231031_133810_090">
+          <img src="images/IMG_20231031_133810_090.webp" loading="lazy" decoding="async" alt="IMG_20231031_133810_090">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -176,7 +183,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/Screenshot_20220204-201412.jpg" alt="Screenshot_20220204-201412">
+          <img src="images/IMG_0004~3.webp" loading="lazy" decoding="async" alt="IMG_0004~3">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -184,7 +191,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/Screenshot_20220204-201412.png" alt="Screenshot_20220204-201412">
+          <img src="images/IMG_0010~6.webp" loading="lazy" decoding="async" alt="IMG_0010~6">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -192,7 +199,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/Screenshot_20220204-201433.jpg" alt="Screenshot_20220204-201433">
+          <img src="images/IMG_0011_125818~2.webp" loading="lazy" decoding="async" alt="IMG_0011_125818~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -200,7 +207,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/Screenshot_20220204-201433.png" alt="Screenshot_20220204-201433">
+          <img src="images/IMG_0014_075617~6.webp" loading="lazy" decoding="async" alt="IMG_0014_075617~6">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -208,7 +215,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0004~3.JPG" alt="IMG_0004~3">
+          <img src="images/IMG_0022~4.webp" loading="lazy" decoding="async" alt="IMG_0022~4">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -216,7 +223,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0010~6.JPG" alt="IMG_0010~6">
+          <img src="images/IMG_0023~2.webp" loading="lazy" decoding="async" alt="IMG_0023~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -224,7 +231,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0011_125818~2.JPG" alt="IMG_0011_125818~2">
+          <img src="images/IMG_0031_072713~3.webp" loading="lazy" decoding="async" alt="IMG_0031_072713~3">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -232,7 +239,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0014_075617~6.JPG" alt="IMG_0014_075617~6">
+          <img src="images/IMG_0035_100526~3.webp" loading="lazy" decoding="async" alt="IMG_0035_100526~3">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -240,7 +247,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0022~4.JPG" alt="IMG_0022~4">
+          <img src="images/IMG_0046_094701~3.webp" loading="lazy" decoding="async" alt="IMG_0046_094701~3">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -248,39 +255,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0023~2.JPG" alt="IMG_0023~2">
-        </div>
-        <p class="painting-title"></p>
-        <p class="painting-size"></p>
-      </div>
-
-      <div class="gallery-item" data-title="" data-size="" data-technique="">
-        <div class="img-wrap">
-          <img src="images/IMG_0031_072713~3.JPG" alt="IMG_0031_072713~3">
-        </div>
-        <p class="painting-title"></p>
-        <p class="painting-size"></p>
-      </div>
-
-      <div class="gallery-item" data-title="" data-size="" data-technique="">
-        <div class="img-wrap">
-          <img src="images/IMG_0035_100526~3.JPG" alt="IMG_0035_100526~3">
-        </div>
-        <p class="painting-title"></p>
-        <p class="painting-size"></p>
-      </div>
-
-      <div class="gallery-item" data-title="" data-size="" data-technique="">
-        <div class="img-wrap">
-          <img src="images/IMG_0046_094701~3.JPG" alt="IMG_0046_094701~3">
-        </div>
-        <p class="painting-title"></p>
-        <p class="painting-size"></p>
-      </div>
-
-      <div class="gallery-item" data-title="" data-size="" data-technique="">
-        <div class="img-wrap">
-          <img src="images/IMG_0036_042658~2.JPG" alt="IMG_0036_042658~2">
+          <img src="images/IMG_0036_042658~2.webp" loading="lazy" decoding="async" alt="IMG_0036_042658~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -292,7 +267,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0082~3.JPG" alt="IMG_0082~3">
+          <img src="images/IMG_0082~3.webp" loading="lazy" decoding="async" alt="IMG_0082~3">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -300,7 +275,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0098~6.JPG" alt="IMG_0098~6">
+          <img src="images/IMG_0098~6.webp" loading="lazy" decoding="async" alt="IMG_0098~6">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -308,7 +283,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0461_043202~2.JPG" alt="IMG_0461_043202~2">
+          <img src="images/IMG_0461_043202~2.webp" loading="lazy" decoding="async" alt="IMG_0461_043202~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -316,7 +291,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0010%20-%20Copy~2.JPG" alt="IMG_0010 - Copy~2">
+          <img src="images/IMG_0010%20-%20Copy~2.webp" loading="lazy" decoding="async" alt="IMG_0010 - Copy~2">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -324,7 +299,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0054_124251~4.JPG" alt="IMG_0054_124251~4">
+          <img src="images/IMG_0054_124251~4.webp" loading="lazy" decoding="async" alt="IMG_0054_124251~4">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -332,7 +307,7 @@
 
       <div class="gallery-item" data-title="" data-size="" data-technique="">
         <div class="img-wrap">
-          <img src="images/IMG_0287~3.JPG" alt="IMG_0054_124251~4">
+          <img src="images/IMG_0287~3.webp" loading="lazy" decoding="async" alt="IMG_0054_124251~4">
         </div>
         <p class="painting-title"></p>
         <p class="painting-size"></p>
@@ -373,6 +348,9 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
 
 
 

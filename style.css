@@ -29,7 +29,6 @@ header {
 .header-inner {
   display: flex;
   align-items: center;
-  grid-auto-flow: dense;
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
@@ -53,7 +52,6 @@ header {
 .nav {
   display: flex;
   align-items: center;
-  grid-auto-flow: dense;
   gap: 36px;
 }
 
@@ -71,17 +69,60 @@ header {
   color: #1a1a1a;
 }
 
-.nav-instagram {
-  display: flex;
-  align-items: center;
-  grid-auto-flow: dense;
-  opacity: 0.6;
-  transition: opacity 0.2s;
+/* -- Share button -- */
+
+.nav-share {
+  position: relative;
 }
 
-.nav-instagram:hover {
+.share-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  padding: 0;
+}
+
+.share-btn:hover,
+.share-btn.open {
   opacity: 1;
   color: #1a1a1a;
+}
+
+.share-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  background: #f4fee0;
+  border: 1px solid #ddd;
+  min-width: 140px;
+  z-index: 200;
+  flex-direction: column;
+  padding: 6px 0;
+}
+
+.share-dropdown.open {
+  display: flex;
+}
+
+.share-option {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #555;
+  padding: 10px 20px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.share-option:hover {
+  color: #1a1a1a;
+  background: rgba(0,0,0,0.04);
 }
 
 /* -- Hamburger -- */
@@ -181,7 +222,6 @@ main {
   background: #f4fee0;
   display: flex;
   align-items: center;
-  grid-auto-flow: dense;
   justify-content: center;
   z-index: 500;
   opacity: 0;
@@ -218,7 +258,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  grid-auto-flow: dense;
   padding: 60px 40px 40px;
   max-width: 90vw;
 }
@@ -228,6 +267,11 @@ main {
   max-height: 72vh;
   object-fit: contain;
   display: block;
+  cursor: zoom-in;
+  will-change: transform;
+  transition: transform 0.08s ease;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .lightbox-info {
@@ -246,7 +290,6 @@ main {
   margin-top: 6px;
   display: flex;
   align-items: center;
-  grid-auto-flow: dense;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
@@ -270,23 +313,6 @@ main {
   color: #ccc;
 }
 
-.lightbox-hint {
-  font-size: 0.65rem;
-  color: #bbb;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 10px;
-}
-
-#lightbox-img {
-  cursor: zoom-in;
-  will-change: transform;
-  transition: transform 0.08s ease;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-
 .lightbox-prev,
 .lightbox-next {
   position: fixed;
@@ -309,7 +335,9 @@ main {
 }
 
 .lightbox-prev { left: 12px; }
-.lightbox-next { right: 12px; }/* -- About Page -- */
+.lightbox-next { right: 12px; }
+
+/* -- About Page -- */
 
 .about-section {
   display: flex;
@@ -412,7 +440,6 @@ footer {
     border-bottom: 1px solid #ebebeb;
     flex-direction: column;
     align-items: center;
-  grid-auto-flow: dense;
     gap: 0;
     padding: 8px 0 20px;
     z-index: 99;
@@ -429,9 +456,29 @@ footer {
     text-align: center;
   }
 
-  .nav-instagram {
-    justify-content: center;
+  .nav-share {
     margin-top: 4px;
+  }
+
+  .share-btn {
+    justify-content: center;
+    width: 100%;
+    padding: 10px 24px;
+  }
+
+  .share-dropdown {
+    position: static;
+    border: none;
+    border-top: 1px solid #ebebeb;
+    width: 100%;
+    align-items: center;
+    padding: 4px 0 8px;
+  }
+
+  .share-option {
+    width: 100%;
+    text-align: center;
+    padding: 10px 24px;
   }
 
   .gallery {
@@ -462,8 +509,3 @@ footer {
     max-width: 320px;
   }
 }
-
-
-
-
-
