@@ -192,13 +192,17 @@ if (lightbox) {
     if (isDragging) { isDragging = false; applyZoom(false); }
   });
 
-  // ── Touch: pinch-to-zoom + single-finger pan ────────────
+  // ── Touch: pinch-to-zoom + single-finger pan + swipe nav ─
+  let swipeStartX = 0, swipeStartY = 0;
+
   lightboxImg.addEventListener('touchstart', e => {
     if (e.touches.length === 2) {
       initPinchDist  = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
       initPinchScale = scale;
       isDragging = false;
     } else if (e.touches.length === 1) {
+      swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
       dragStartX = e.touches[0].clientX - panX;
       dragStartY = e.touches[0].clientY - panY;
       isDragging = scale > 1; hasDragged = false;
@@ -220,5 +224,15 @@ if (lightbox) {
     }
   }, { passive: false });
 
-  lightboxImg.addEventListener('touchend', () => { isDragging = false; initPinchDist = 0; });
+  lightboxImg.addEventListener('touchend', e => {
+    isDragging = false;
+    initPinchDist = 0;
+    if (scale === 1 && e.changedTouches.length === 1) {
+      const dx = e.changedTouches[0].clientX - swipeStartX;
+      const dy = e.changedTouches[0].clientY - swipeStartY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        dx < 0 ? showItem(currentIndex + 1) : showItem(currentIndex - 1);
+      }
+    }
+  });
 }
