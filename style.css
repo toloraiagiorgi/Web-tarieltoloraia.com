@@ -341,6 +341,17 @@ main {
   height: 42px;
 }
 
+@media (max-width: 680px) {
+  .lightbox-prev svg,
+  .lightbox-next svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .lightbox-prev { left: 2px; }
+  .lightbox-next { right: 2px; }
+}
+
 .lightbox-prev { left: 12px; }
 .lightbox-next { right: 12px; }
 

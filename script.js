@@ -102,6 +102,11 @@ if (lightbox) {
     lightboxImg.style.transition = animate ? 'transform 0.2s ease' : 'none';
     lightboxImg.style.transform  = scale === 1 ? '' : `translate(${panX}px, ${panY}px) scale(${scale})`;
     lightboxImg.style.cursor     = scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in';
+    const hidden = scale > 1;
+    btnPrev.style.opacity       = hidden ? '0' : '';
+    btnNext.style.opacity       = hidden ? '0' : '';
+    btnPrev.style.pointerEvents = hidden ? 'none' : '';
+    btnNext.style.pointerEvents = hidden ? 'none' : '';
   }
 
   function resetZoom() {
@@ -110,6 +115,8 @@ if (lightbox) {
     lightboxImg.style.transition = 'none';
     lightboxImg.style.transform  = '';
     lightboxImg.style.cursor     = 'zoom-in';
+    btnPrev.style.opacity = ''; btnPrev.style.pointerEvents = '';
+    btnNext.style.opacity = ''; btnNext.style.pointerEvents = '';
   }
 
   function showItem(index) {
