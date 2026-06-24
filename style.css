@@ -394,6 +394,52 @@ main {
   border-color: #1a1a1a;
 }
 
+/* -- Exhibitions -- */
+
+.exhibitions-section {
+  max-width: 960px;
+  margin: 0 auto 80px;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-bottom: 48px;
+}
+
+.exhibitions-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+}
+
+.exhibitions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exhibitions-list li {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.ex-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: #999;
+  margin-right: 14px;
+}
+
 /* -- Footer -- */
 
 footer {
@@ -483,6 +529,10 @@ footer {
 
   .gallery {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    grid-column: span 1 !important;
   }
 
   .header-inner {
